@@ -1,0 +1,10 @@
+Installation:
+    
+    git clone git://github.com/bongu/vim.git ~/.vim
+    git submodule init
+    git submodule update
+
+Create symlinks:
+
+    ln -s <path to vim repo>/vim ~/.vim
+    ln -s <path to vim repo>/vimrc ~/.vimrc

@@ -1,0 +1,64 @@
+"==============================================================================
+"	COMMON SETTINGS
+"==============================================================================
+set nocp
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
+syntax on
+filetype plugin indent on
+
+set showmode
+set showcmd
+set number
+set ruler
+set hidden
+set lazyredraw
+set wrapscan
+set nowrap
+set incsearch
+set ignorecase
+set smartcase
+set scrolloff=5
+set backspace=2
+set virtualedit=all
+
+set wildmenu
+set wildignore=*.o,*.obj,*.bak,*.exe,*.gch,*.pyc
+
+set stl=%f\ %m\ %r\ Type:\ %y\ [%p%%]\ Buf:\ #%n\ [%b][0x%B]\ Col=%c
+set laststatus=2
+
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=79
+
+set winminheight=0
+
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.backup//
+
+"Remove menu and toolbar
+if has ("gui_running")
+    colors molokai
+    set guioptions -=m
+    set guioptions -=T
+    set guioptions -=r
+else
+    set t_Co=256
+    colors xoria256
+endif
+
+let NERDTreeIgnore = ['\.pyc$']
+
+nmap <F4> :NERDTreeToggle<cr>
+
+"Edit config files
+nmap <leader>a :b#<CR>
+nmap <leader>d :nohlsearch<CR>
+
+nmap <Backspace> o<esc>
+nmap <S-Backspace> O<esc>
+nmap <CR> i<return><esc>
